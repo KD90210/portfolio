@@ -9,27 +9,20 @@
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#ffffff; --surface:#f5f6ef; --ink:#2b3018; --muted:#5f6847; --line:#dde0d0; --accent:#5c6b2a; --accent-ink:#ffffff; --code-bg:#3a4421; --code-ink:#ffffff; --code-key:#c3d27e; --code-str:#e9e0b0;
+  --bg:#050a14; --surface:#0b1322; --ink:#f1e3cb; --muted:#c4b79f; --line:#4a4033; --gold:#e3c595; --accent:#80151d; --accent-ink:#f8eedd;
+  --code-bg:#0b1322; --code-ink:#f1e3cb; --code-key:#e3c595; --code-str:#ac343c;
   box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
-  color-scheme:light;
-}
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-    --bg:#1c2014; --surface:#262c1b; --ink:#f4f5ef; --muted:#b2b79c; --line:#3a4229; --accent:#a9b86a; --accent-ink:#1c2014; --code-bg:#12150c; --code-ink:#f4f5ef; --code-key:#b5c46f; --code-str:#e6cf8e; color-scheme:dark;
-  }
-}
-:root[data-theme="dark"]{
-  --bg:#1c2014; --surface:#262c1b; --ink:#f4f5ef; --muted:#b2b79c; --line:#3a4229; --accent:#a9b86a; --accent-ink:#1c2014; --code-bg:#12150c; --code-ink:#f4f5ef; --code-key:#b5c46f; --code-str:#e6cf8e; color-scheme:dark;
+  color-scheme:dark;
 }
 html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 "IBM Plex Sans",system-ui,sans-serif}
+body{margin:0;background:radial-gradient(ellipse at top,#0d1627 0%,var(--bg) 60%) fixed;color:var(--ink);font:400 17px/1.6 "IBM Plex Sans",system-ui,sans-serif}
 h1,h2,h3{font-family:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;line-height:1.1;margin:0}
 a{color:inherit}
-:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
 .wrap{max-width:1040px;margin:0 auto;padding:0 24px}
 header.nav{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
-header.nav b{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:20px}
+header.nav b{color:var(--gold);font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:20px}
 header.nav nav{display:flex;gap:22px;font-size:15px}
 header.nav nav a{text-decoration:none;color:var(--muted)}
 header.nav nav a:hover{color:var(--ink)}
@@ -37,8 +30,10 @@ header.nav nav a:hover{color:var(--ink)}
 .hero h1{font-size:clamp(46px,8vw,92px);font-weight:800;letter-spacing:-.03em}
 .hero p.lead{font-size:20px;color:var(--muted);max-width:30em;margin:22px 0 30px}
 .btns{display:flex;gap:12px;flex-wrap:wrap}
-.btn{display:inline-block;padding:13px 22px;border-radius:8px;font-weight:500;text-decoration:none;border:1.5px solid var(--ink)}
+.btn{display:inline-block;padding:13px 22px;border-radius:8px;font-weight:500;text-decoration:none;border:1.5px solid var(--gold);color:var(--gold)}
 .btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.hero h1 span{display:block;color:#8c1720}
+section h2::after{content:"";display:block;width:90px;height:2px;margin-top:12px;background:linear-gradient(90deg,#8c1720,transparent)}
 .btn:hover{transform:translateY(-1px)}
 .code{background:var(--code-bg);color:var(--code-ink);border-radius:12px;padding:22px 24px;font:400 14.5px/1.75 "IBM Plex Mono",ui-monospace,monospace;overflow-x:auto;white-space:pre}
 .code .k{color:var(--code-key)} .code .s{color:var(--code-str)}
@@ -51,13 +46,13 @@ section h2{font-size:clamp(30px,4.5vw,44px);font-weight:700;margin-bottom:32px;l
 .about{display:grid;grid-template-columns:1fr 1fr;gap:48px}
 .about p{margin:0 0 16px;max-width:34em}
 .skills{display:flex;flex-wrap:wrap;gap:10px;margin:0;padding:0;list-style:none}
-.skills li{padding:8px 16px;border:1.5px solid var(--line);background:var(--surface);border-radius:999px;font-size:15px}
+.skills li{padding:8px 16px;border:1.5px solid var(--gold);background:var(--surface);border-radius:999px;font-size:15px}
 .proj{display:grid;grid-template-columns:200px 1fr auto;gap:28px;align-items:start;padding:28px 0;border-bottom:1px solid var(--line)}
 .proj:first-of-type{border-top:1px solid var(--line)}
 .proj h3{font-size:24px;font-weight:700}
 .proj .stack{font:400 13.5px "IBM Plex Mono",monospace;color:var(--muted);margin-top:8px}
 .proj p{margin:0;color:var(--muted);max-width:36em}
-.proj a{font-weight:500;color:var(--accent);white-space:nowrap}
+.proj a{font-weight:500;color:var(--gold);white-space:nowrap}
 .edu{display:grid;grid-template-columns:200px 1fr;gap:28px}
 .edu .when{font:400 14px "IBM Plex Mono",monospace;color:var(--muted);padding-top:4px}
 .edu h3{font-size:22px;margin-bottom:6px}
@@ -86,7 +81,7 @@ footer{padding:36px 0 48px;color:var(--muted);font-size:14px;border-top:1px soli
   <main>
     <div class="hero">
       <div>
-        <h1>Kourosh Dadgar</h1>
+        <h1>Kourosh <span>Dadgar</span></h1>
         <p class="lead">Software development student who builds clean, working things and keeps learning how to build them better.</p>
         <div class="btns">
           <a class="btn primary" href="#projects">See my projects</a>
